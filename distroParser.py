@@ -48,7 +48,7 @@ def delete_old_torrents(pathname):
             os.remove(pathname+filename)
 
 
-def print_header(xml):
+def print_header():
     today = 'Retreived XML: ' + str(date.today())
     print(today)
 
@@ -71,7 +71,6 @@ def parse_xml(xml):
 
 
 def get_xml(file):
-
     if (not os.path.isfile(file)) or (file_age_in_days(torrentXML) > xml_age_to_keep):
         print_line_msg('Downloading latest XML file from DistroWatch')
         requestit.urlretrieve(url, file)
@@ -106,7 +105,7 @@ get_xml(torrentXML)
 tree = ET.parse(torrentXML)
 root = tree.getroot()
 
-print_header(root)
+print_header()
 
 parse_xml(root)
 
