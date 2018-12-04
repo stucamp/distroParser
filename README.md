@@ -9,9 +9,11 @@ Meant to be used in conjunction with cron in a linux system to maintain/seed cur
 
 To Use:
 
-  Place file in whatever directory suites you.  Modify any of the paths (torrentXML, logDir, or torrentDir) to your liking use the pull path for each.
+  Place file in whatever directory suites you.  
   
-  Ensure the "torrentDir" variable (```./torrents/``` by default) matches the full path of the watch directory of your torrent client.
+  Modify the variables ```torrentXML, logDir, and torrentDir``` to the full path you'd like for each.  Please note that the log file must be named ```message.log``` and the torrent XML ```torrents.xml```.
+  
+  Ensure the ```torrentDir``` variable matches the full path of the watch directory of your torrent client.
   
   Enable execution of the script with ```sudo chmod a+x ./distroParser.py```
   
