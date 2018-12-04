@@ -35,8 +35,8 @@ def delete_old_torrents(pathname):
 
 
 def print_header(xml):
-    today = str(date.today())
-    print_line_msg('Retreived XML: ', today)
+    today = 'Retreived XML: ' + str(date.today())
+    print(today)
 
 
 def parse_xml(xml):
