@@ -22,3 +22,5 @@ To Use:
   ```/usr/bin/python3    /FULL/PATH/TO/distroParser.py```
   
   Note, the log file will continuously append the output and a list of torrents/xml downloaded (if any).  It will keep a log for 3 months and start anew if the file is found to be older than this.
+  
+  Note 2, some torrent clients append ```.added``` to the filename of the torrent file once it's been worked.  This program checks for the filename + .added.
