@@ -48,8 +48,8 @@ def delete_old_torrents(pathname):
             os.remove(pathname+filename)
 
 
-def print_up_date():
-    print('Retreived XML: ' + str(date.today()))
+def print_run_date():
+    print('Run on: ' + str(date.today()))
 
 
 def parse_xml(xml):
@@ -104,7 +104,7 @@ get_xml(torrentXML)
 tree = ET.parse(torrentXML)
 root = tree.getroot()
 
-print_up_date()
+print_run_date()
 
 parse_xml(root)
 
