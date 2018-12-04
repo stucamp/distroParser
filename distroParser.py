@@ -36,13 +36,11 @@ def delete_old_torrents(pathname):
 
 def print_header(xml):
     today = str(date.today())
-    print('Retreived XML: ', today)
-    print('--------------------------------------------------')
+    print_line_msg('Retreived XML: ', today)
 
 
 def parse_xml(xml):
-    print('Parsing XML File')
-    print('--------------------------------------------------')
+    print_line_msg('Parsing XML File')
 
     for item in xml[0].findall('item'):
         if item.text != xml[0][0].text:
@@ -55,30 +53,30 @@ def parse_xml(xml):
                         print('\t---Downloading', item[0].text, '---')
                         requestit.urlretrieve(item[1].text, torrentDir + item[0].text)
                         break
-                        
+
 
 def get_xml(file):
 
     if (not os.path.isfile(file)) or (file_age_in_days(torrentXML) > 1):
-        print('--------------------------------------------------')
-        print('Downloading latest XML file from DistroWatch')
-        print('--------------------------------------------------')
+        print_line_msg('Downloading latest XML file from DistroWatch')
         url = 'https://distrowatch.com/news/torrents.xml'
         requestit.urlretrieve(url, file)
     else:
-        print('--------------------------------------------------')
-        print('Using existing XML file from DistroWatch')
-        print('--------------------------------------------------')
+        print_line_msg('Using existing XML file from DistroWatch')
 
 
 def wrap_it_up():
-    print('--------------------------------------------------')
-    print('Finished Updating Torrent Files')
-    print('--------------------------------------------------')
+    print_line_msg('Finished Updating Torrent Files')
     print('\n\n\n\n')
 
     sys.stdout = old_stdout
     log_file.close()
+
+
+def print_line_msg(msg):
+    print('--------------------------------------------------')
+    print(msg)
+    print('--------------------------------------------------')
 
 
 get_xml(torrentXML)
