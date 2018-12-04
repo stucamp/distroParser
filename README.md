@@ -9,7 +9,7 @@ Meant to be used in conjunction with cron in a linux system to maintain/seed cur
 
 To Use:
 
-  Place file in whatever directory suites you.  Modify any of the paths (torrentXML, logDir, or torrentDir) to your liking use the pull path for each.
+  Place file in whatever directory suites you.  Modify any of the paths (torrentXML, logDir, or torrentDir) to your liking use the full path for each.
   
   Ensure the "torrentDir" variable (```./torrents/``` by default) matches the full path of the watch directory of your torrent client.
   
