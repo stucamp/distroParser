@@ -5,17 +5,26 @@ import urllib.request as requestit
 import os, stat, time, sys
 from datetime import date
 
+# List of linux distros to look out for.  Case and format is sensitive/specific to naming schemes.
 distros = ["debian", "neon", "raspbian", "ubuntu", "antergos", "manjaro", "CentOS", "Fedora", "kali", "tails", "popos",
            "ipfire", "elementaryos", "pfsense", "openmediavault", "FreeNAS", "FreeBSD", "Peppermint", "linuxmint",
            "openSUSE", "Zorin"]
 
+# Provides length to keep torrent files (years) and xml (days)
 distro_age_to_keep = 1
 xml_age_to_keep = 1
+
+# Paths for XML file, torrent client watch dir, and log file.
 torrentXML = "./torrents.xml"
 torrentDir = "./torrents/"
+logDir = "./message.log"
 
+# URL for DistroWatch RSS feed, provides xml.
+url = 'https://distrowatch.com/news/torrents.xml'
+
+# Sets print to output to log instead of stdout
 old_stdout = sys.stdout
-log_file = open("message.log", "a")
+log_file = open(logDir, "a")
 sys.stdout = log_file
 
 
@@ -63,7 +72,6 @@ def get_xml(file):
 
     if (not os.path.isfile(file)) or (file_age_in_days(torrentXML) > xml_age_to_keep):
         print_line_msg('Downloading latest XML file from DistroWatch')
-        url = 'https://distrowatch.com/news/torrents.xml'
         requestit.urlretrieve(url, file)
     else:
         print_line_msg('Using existing XML file from DistroWatch')
