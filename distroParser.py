@@ -14,10 +14,11 @@ distros = ["debian", "neon", "raspbian", "ubuntu", "antergos", "manjaro", "CentO
 distro_age_to_keep = 1
 xml_age_to_keep = 1
 
-# Paths for XML file, torrent client watch dir, and log file.
+# Paths for XML file, log file, and torrent client watch dir.
 torrentXML = "./torrents.xml"
-torrentDir = "./torrents/"
 logDir = "./message.log"
+
+torrentDir = "./torrents/"
 
 # URL for DistroWatch RSS feed, provides xml.
 url = 'https://distrowatch.com/news/torrents.xml'
@@ -90,6 +91,14 @@ def print_line_msg(msg):
     print(msg)
     print('--------------------------------------------------')
 
+
+def check_log_age(path_to_log):
+    if os.path.isfile(path_to_log) and file_age_in_years(path_to_log) > .25:
+        os.remove(path_to_log)
+        print('New Log started' + str(date.today()))
+
+
+check_log_age(logDir)
 
 get_xml(torrentXML)
 
