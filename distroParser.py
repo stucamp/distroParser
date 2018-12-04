@@ -7,6 +7,8 @@ distros = ["debian", "neon", "raspbian", "ubuntu", "antergos", "manjaro", "CentO
            "ipfire", "elementaryos", "pfsense", "openmediavault", "FreeNAS", "FreeBSD", "Peppermint", "linuxmint",
            "openSUSE", "Zorin"]
 
+distro_age_to_keep = 1
+xml_age_to_keep = 1
 torrentXML = "./torrents.xml"
 torrentDir = "./torrents/"
 
@@ -29,7 +31,7 @@ def check_if_exists(pathname):
 
 def delete_old_torrents(pathname):
     for filename in os.listdir(pathname):
-        if file_age_in_years(pathname+filename) > .5:
+        if file_age_in_years(pathname+filename) > distro_age_to_keep:
             print('Removing old file:', filename)
             os.remove(pathname+filename)
 
@@ -57,7 +59,7 @@ def parse_xml(xml):
 
 def get_xml(file):
 
-    if (not os.path.isfile(file)) or (file_age_in_days(torrentXML) > 1):
+    if (not os.path.isfile(file)) or (file_age_in_days(torrentXML) > xml_age_to_keep):
         print_line_msg('Downloading latest XML file from DistroWatch')
         url = 'https://distrowatch.com/news/torrents.xml'
         requestit.urlretrieve(url, file)
