@@ -45,22 +45,17 @@ def parse_xml(xml):
     print('--------------------------------------------------')
 
     for item in xml[0].findall('item'):
-
         if item.text != xml[0][0].text:
-
             for name in distros:
-
                 if name in item[0].text:
-
                     if check_if_exists(torrentDir + item[0].text):
                         print('\t---Already Exists', item[0].text, '---')
                         break
-
                     else:
                         print('\t---Downloading', item[0].text, '---')
                         requestit.urlretrieve(item[1].text, torrentDir + item[0].text)
                         break
-
+                        
 
 def get_xml(file):
 
