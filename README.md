@@ -13,7 +13,7 @@ To Use:
   
   Modify the variables ```torrentXML, logDir, and torrentDir``` to the full path you'd like for each.  Please note that the log file must be named ```message.log``` and the torrent XML ```torrents.xml```.
   
-  Ensure the "torrentDir" variable (```./torrents/``` by default) matches the full path of the watch directory of your torrent client.
+  Ensure the ```torrentDir``` variable matches the full path of the watch directory of your torrent client.
   
   Enable execution of the script with ```sudo chmod a+x ./distroParser.py```
   
