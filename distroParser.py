@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import xml.etree.ElementTree as ET
 import urllib.request as requestit
 import os, stat, time, sys
