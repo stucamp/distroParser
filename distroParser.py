@@ -8,7 +8,7 @@ from datetime import date
 # List of linux distros to look out for.  Case and format is sensitive/specific to naming schemes.
 distros = ["debian", "neon", "raspbian", "ubuntu", "antergos", "manjaro", "CentOS", "Fedora", "kali", "tails", "popos",
            "ipfire", "elementaryos", "pfsense", "openmediavault", "FreeNAS", "FreeBSD", "Peppermint", "linuxmint",
-           "openSUSE", "Zorin"]
+           "openSUSE", "Zorin", "proxmox", "gparted-live", "systemrescuedc", "OSMC", "FreeBSD", "untangle"]
 
 # Provides length to keep torrent files (years) and xml (days)
 distro_age_to_keep = 1
