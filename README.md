@@ -17,5 +17,6 @@ To Use:
   
   Ensure that all files have adequate permissions for the user.  ```sudo chown -R $USER /FULL/PATH/TO/DIR/```
   
-  Can then put an entry in crontab for automatic updates to torrent files using 
+  Can then put an entry in crontab for automatic updates to torrent files using:
+  
   ```/usr/bin/python3    /FULL/PATH/TO/distroParser.py```
