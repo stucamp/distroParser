@@ -9,7 +9,9 @@ Meant to be used in conjunction with cron in a linux system to maintain/seed cur
 
 To Use:
 
-  Place file in whatever directory suites you.  Modify any of the paths (torrentXML, logDir, or torrentDir) to your liking use the full path for each.
+  Place file in whatever directory suites you.  
+  
+  Modify the variable ```torrentXML, logDir, and torrentDir``` to your the full path you'd like for each.  Please note that the log file must be named ```message.log``` and the torrent XML ```torrents.xml```.
   
   Ensure the "torrentDir" variable (```./torrents/``` by default) matches the full path of the watch directory of your torrent client.
   
