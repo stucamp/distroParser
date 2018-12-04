@@ -60,7 +60,7 @@ def parse_xml(xml):
         if item.text != xml[0][0].text:
             for name in distros:
                 if name in item[0].text:
-                    if check_if_exists(torrentDir + item[0].text):
+                    if check_if_exists(torrentDir + item[0].text + '.added'):
                         print('\t---Already Exists', item[0].text, '---')
                         break
                     else:
