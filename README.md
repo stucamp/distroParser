@@ -3,7 +3,7 @@ Small python program to download XML from DistroWatch, parse, and maintain newly
 
 Keeps track of how old the XML is, limiting to 1 update per day by default changed by modifying ```xml_age_to_keep```.
 
-Removes old torrent files, limited to 1 year by default changed by modifying ```distor_age_to_keep```.
+Removes old torrent files, limited to 1 year by default changed by modifying ```distro_age_to_keep```.
 
 Meant to be used in conjunction with cron in a linux system to maintain/seed current Linux ISO torrent files.
 
