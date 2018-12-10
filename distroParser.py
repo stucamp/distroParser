@@ -5,6 +5,14 @@ import urllib.request as requestit
 import os, stat, time, sys
 from datetime import date
 
+__author__ = "Stu Campbell"
+__credits__ = ["Stu Campbell"]
+__license__ = "GPLv3"
+__version__ = "0.0.1"
+__maintainer__ = "Stu Campbell"
+__email__ = "stucampbell.git@gmail.com"
+__status__ = "intial mess about script"
+
 # List of linux distros to look out for.  Case and format is sensitive/specific to naming schemes.
 distros = ["debian", "neon", "raspbian", "ubuntu", "antergos", "manjaro", "CentOS", "Fedora", "kali", "tails", "popos",
            "ipfire", "elementaryos", "pfsense", "openmediavault", "FreeNAS", "FreeBSD", "Peppermint", "mint",
