@@ -28,3 +28,4 @@ To Use:
   Note 2, some torrent clients append ```.added``` to the filename of the torrent file once it's been worked.  This program checks for the filename + .added.
 
 Will be updating pop, soon.
+ quick test
